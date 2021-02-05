@@ -1,0 +1,8 @@
+{
+  "*": {
+    "target": "https://bidoneapi.azurewebsites.net",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
+

@@ -1,0 +1,42 @@
+<form [formGroup]="userDetails" class="form">
+  <mat-card class="center" style="background: transparent">
+    <mat-card-title class="textCenter">
+      User Details
+    </mat-card-title>
+    <mat-card-content>
+      <mat-grid-list [cols]="cols" rowHeight="fit" style="height: 50vh">
+        <mat-grid-tile>
+          <mat-form-field appearance="standard" class="formItem" >
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" >
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard" class="formItem">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard" class="formItem">
+            <mat-label>DOB</mat-label>
+            <input matInput [matDatepicker]="picker"  formControlName="dob" [min]="minDate" [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard" class="formItem">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
